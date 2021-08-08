@@ -35,9 +35,11 @@ export class LoginComponent implements OnInit {
     console.log(this.pswd);
     
   }
-  login(){
-    var ac=this.acno
-    var pw=this.pswd
+  login(a:any,p:any){
+    //console.log(a.value,p.value);
+    
+    var ac=a.value
+    var pw=p.value
     let dataset=this.account_details
 
     if(ac in dataset){

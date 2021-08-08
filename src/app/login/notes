@@ -17,4 +17,6 @@ Angular features
         Event binding:(event)="function call"
         Event binding using dollar event ($)event (event)="function call"
 
-        
+        Template referencing variable (#)
+
+
