@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "07d98370-fa7e-4999-915c-2246555cc3f3"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mypro": {
+    "BankApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mypro",
+            "outputPath": "dist/BankApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mypro:build"
+            "browserTarget": "BankApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mypro:build:production"
+              "browserTarget": "BankApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mypro:build"
+            "browserTarget": "BankApp:build"
           }
         },
         "test": {
@@ -113,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mypro:serve"
+            "devServerTarget": "BankApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mypro:serve:production"
+              "devServerTarget": "BankApp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "mypro"
+  "defaultProject": "BankApp"
 }

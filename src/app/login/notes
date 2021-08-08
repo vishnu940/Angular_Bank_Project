@@ -1,0 +1,20 @@
+Angular features
+
+1.Component (root-AppComponent)
+
+2.Module(root-AppModule)
+
+3.Data binding
+
+    3.1 one way binding(Data flows from component to view and view to component)
+
+    (A):component to view
+        String Interpolation/Interpolation ({{expression}})
+        property binding - [Binding-target]="Binding source"
+
+    (B):view to component   
+
+        Event binding:(event)="function call"
+        Event binding using dollar event ($)event (event)="function call"
+
+        
