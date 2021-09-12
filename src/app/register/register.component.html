@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            
+            <div class="main">
+                <h4>Register Here<br></h4><br>
+            <form (ngSubmit)="register()">
+            <input id="uname" type="text" class="text" name="uname" [(ngModel)]="uname"  placeholder="Username"><br><br>
+            
+            <input id="accnotext" type="text" class="text" name="acno" [(ngModel)]="acno"  placeholder="Account number"><br><br>
+            
+            <input id="pwdtext" type="password"  class="text" name="pswd" [(ngModel)]="pswd"  placeholder="Password" ><br> <br>
+            
+           <div class="line"></div>
+                <input type="submit" value="Create New Account" class="button button1 butefct"> <br><br>
+            </form>
+        </div></div>
+        <div class="col-4"></div>
+    </div>
+</div>

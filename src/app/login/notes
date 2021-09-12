@@ -20,3 +20,9 @@ Angular features
         Template referencing variable (#)
 
 
+3.2 Two way binding
+    (A) ngModel is defined in (FormsModules/)
+    syntax:
+    [(ngModel)="variable name"]
+
+    Dependency injection

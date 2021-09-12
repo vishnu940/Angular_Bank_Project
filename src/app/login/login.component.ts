@@ -1,5 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -8,52 +10,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   aim="Your perfect banking partner"
+  msg="Login Here"
   //account="Account number please"
   check:any
-  acno=""
+  acno="Account number please"
   pswd=""
   //acco="Account number"
-  account_details:any ={
-    1000:{ name: "ajay", accno: 1000, password: "testone", amount: 5000 },
-    1001:{ name: "vijay", accno: 1001, password: "testtwo", amount: 3000 },
-    1002:{ name: "ram", accno: 1002, password: "testthree", amount: 7000 },
-    1003:{ name: "ravi", accno: 1003, password: "testfour", amount: 10000 },
-
-  }
-
-  constructor() { }
+ 
+  constructor(private router:Router,private data:DataService) { }
 
   ngOnInit(): void {
   }
-  account(event:any){
-    this.acno=event.target.value
-    console.log(this.acno);
+  // account(event:any){
+  //   this.acno=event.target.value
+  //   console.log(this.acno);
     
-  }
-  psswd(event:any){
-    this.pswd=event.target.value
-    console.log(this.pswd);
+  // }
+  // psswd(event:any){
+  //   this.pswd=event.target.value
+  //   console.log(this.pswd);
     
-  }
-  login(a:any,p:any){
+  // }
+  login(){
     //console.log(a.value,p.value);
     
-    var ac=a.value
-    var pw=p.value
-    let dataset=this.account_details
+    var ac=this.acno
+    var pw=this.pswd
 
-    if(ac in dataset){
-      if(pw==dataset[ac]["password"]){
-        alert("Login success")
-
-
-      }
-      else{
-        alert("Login failed")
-      }
+    var res=this.data.login(ac,pw)
+    if(res){
+      alert("Login Success")
+      this.router.navigateByUrl("dashboard")
     }
-    else{
-      alert("Invalid account details")
-    }
+    
+  }
+  register(){
+    this.router.navigateByUrl("register")
   }
 }
